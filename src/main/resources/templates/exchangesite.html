@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ExchangeWebsite</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body bgcolor="#009933">
+
+<h1>Exchange GBP:</h1>
+<form action="#" th:action="@{/exchangesite}" th:object="${actionModel}" method="POST">
+    <input type="text" th:field="*{a}"/>
+    <p>
+        <input type="submit" class="button" name="add" value="Exchange money GBP to PLN"/>
+
+    </p>
+
+    <h1><p th:text="'Result: ' + ${result} + ' PLN'"/></h1>
+</form>
+</body>
+</html>
