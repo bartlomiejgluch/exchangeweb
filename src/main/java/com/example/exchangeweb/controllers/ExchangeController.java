@@ -18,7 +18,7 @@ public class ExchangeController {
     ActionModel actionModel = new ActionModel();
 
     @Autowired
-    private ExchangeSimple calculateSimple;
+    private ExchangeSimple exchangeSimple;
 
     @RequestMapping("/exchangesite")
     public String getCalculatorPage(Model model) {
@@ -28,14 +28,14 @@ public class ExchangeController {
 
     @RequestMapping(value = "/exchangesite", params = "add", method = RequestMethod.POST)
     public String add(@ModelAttribute("actionModel") ActionModel actionModel, Model model) throws IOException {
-        model.addAttribute("result", calculateSimple.add(actionModel));
+        model.addAttribute("result", exchangeSimple.add(actionModel));
         return "exchangesite";
     }
 
 
     @RequestMapping(value = "/exchangesite", params = "clearSimple", method = RequestMethod.POST)
     public String clearSimple(@ModelAttribute("actionModel") ActionModel actionModel, Model model) {
-        model.addAttribute("actionModel", calculateSimple.clearSimple(actionModel));
+        model.addAttribute("actionModel", exchangeSimple.clearSimple(actionModel));
         model.addAttribute("result", 0);
         return "exchangesite";
     }
