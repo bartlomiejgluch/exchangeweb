@@ -8,9 +8,9 @@
 
 <h1>Exchange GBP:</h1>
 <form action="#" th:action="@{/exchangesite}" th:object="${actionModel}" method="POST">
-    <input type="text" th:field="*{a}"/>
+    <input type="number" th:field="*{a}"/>
     <p>
-        <input type="submit" class="button" name="add" value="Exchange money GBP to PLN"/>
+        <input type="submit" class="button" name="exchange" value="Exchange money GBP to PLN"/>
 
     </p>
 

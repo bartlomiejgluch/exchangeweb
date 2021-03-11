@@ -12,12 +12,13 @@ import java.io.IOException;
 @Service
 public class ExchangeSimple {
 
-    public double add(ActionModel model) throws IOException {
+    public double exchange(ActionModel model) throws IOException {
 
         ActionJson actionJson = new ActionJson();
         actionJson.getJsonData();
         double valueToCalculate = actionJson.valueCurrency;
         System.out.println(valueToCalculate);
+
         double results = model.getA() * valueToCalculate;
         return results;
     }

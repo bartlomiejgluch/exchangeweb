@@ -26,9 +26,9 @@ public class ExchangeController {
         return "exchangesite";
     }
 
-    @RequestMapping(value = "/exchangesite", params = "add", method = RequestMethod.POST)
-    public String add(@ModelAttribute("actionModel") ActionModel actionModel, Model model) throws IOException {
-        model.addAttribute("result", exchangeSimple.add(actionModel));
+    @RequestMapping(value = "/exchangesite", params = "exchange", method = RequestMethod.POST)
+    public String exchange(@ModelAttribute("actionModel") ActionModel actionModel, Model model) throws IOException {
+        model.addAttribute("result", exchangeSimple.exchange(actionModel));
         return "exchangesite";
     }
 
